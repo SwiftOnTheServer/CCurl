@@ -1,0 +1,7 @@
+module CCurl [system] {
+    header "/usr/include/curl/curl.h"
+    header "sots_curl.h"
+    link "curl"
+    link "sotscurl"
+    export *
+}
