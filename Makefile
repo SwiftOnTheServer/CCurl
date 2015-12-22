@@ -8,3 +8,6 @@ sots_curl.o: sots_curl.c
 
 clean:
 	rm -f *.o *.a $(TARGET)
+
+install:
+	cp $(TARGET) /usr/local/lib/$(TARGET)

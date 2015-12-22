@@ -9,6 +9,16 @@ For Linux you need:
 `sudo apt-get install libcurl4-openssl-dev`
 
 
+# Build the library
+
+At the moment, you need to build the static library yourself:
+
+```
+make
+sudo make install
+```
+
+
 ## Usage
 
 This component is set up to be used with the [Swift Package Manager][2].
