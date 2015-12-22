@@ -11,12 +11,23 @@ For Linux you need:
 
 # Build the library
 
-At the moment, you need to build the static library yourself:
+At the moment, you need to build the static library yourself as `curl_easy_setopt`
+is a variadic function and so is not imported by Swift.
+
+The sotscurl.a static library provides these additional functions to get around
+this problem:
+
+* `curl_easy_setopt_string`
+* `curl_easy_setopt_bool`
+
+
+Build it like this:
 
 ```
 make
 sudo make install
 ```
+
 
 
 ## Usage
