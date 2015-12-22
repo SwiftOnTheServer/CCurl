@@ -42,5 +42,42 @@ let package = Package(
 ```
 
 
+## Example application
+
+In a new directory, create `Package.swift`:
+
+
+```swift
+import PackageDescription
+
+let package = Package(
+    dependencies: [
+        .Package(url: "https://github.com/SwiftOnTheServer/CCurl.git", versions: Version(0,0,1)..<Version(2,0,0))
+    ]
+)
+```
+
+Now create `main.swift`:
+
+```swift
+import CCurl
+
+let handle = curl_easy_init()
+
+curl_easy_setopt_string(handle, CURLOPT_URL, "http://www.example.com")
+curl_easy_setopt_bool(handle, CURLOPT_VERBOSE, true)
+
+let ret = curl_easy_perform(handle)
+let error = curl_easy_strerror(ret)
+
+print("error = \(error)")
+print("ret = \(ret)")
+```
+
+Build the app: `swift build`
+
+Run the app: `.build/debug/app`
+
+
 [1]: http://curl.haxx.se/libcurl/
 [2]: https://swift.org/package-manager/
