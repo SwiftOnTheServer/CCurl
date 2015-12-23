@@ -15,3 +15,8 @@ CURLcode curl_easy_setopt_func(CURL *handle, CURLoption option, curl_func param)
 {
     return curl_easy_setopt(handle, option, param);
 }
+
+CURLcode curl_easy_setopt_pointer(CURL *handle, CURLoption option, void* param)
+{
+    return curl_easy_setopt(handle, option, param);
+}
